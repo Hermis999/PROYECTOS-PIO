@@ -22,6 +22,7 @@ header img {
     height: 300px;
     display: inline-block;
     margin-right: -3px;
+    background-size: cover;
 }
 
 /* Formulario de agregar película */
