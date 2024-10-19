@@ -1,0 +1,152 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    background-color: #333333f9;
+    color: white;
+}
+
+/* Header */
+header {
+    background-color: #292929e5;
+    color: white;
+    margin: 0;
+    padding: 0px;
+    text-align: center;
+}
+    
+
+header img {
+    width: 180px;
+    height: 300px;
+    display: inline-block;
+    margin-right: -3px;
+}
+
+/* Formulario de agregar película */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input {
+    margin-right: 10px;
+}
+
+
+/* Contenedor de las películas */
+#movieList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilos de cada tarjeta de película */
+.movie-card {
+    width: 200px;
+    background-color: rgba(68, 0, 255);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #f0f0f0;
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Estilos del modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: rgb(68, 0, 255);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    color: #f0f0f0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilos del modo oscuro */
+body.dark-mode {
+    background-color: white;
+    color: #333;
+}
+
+header.dark-mode {
+    background-color: white;
+    color: black;
+}
+
+button.add-movie {
+    background-color: rgba(68, 0, 255);
+    padding: 5px 10px;
+    margin-right: 10px;
+
+}
+button.add-movie {
+    background-color: rgba(68, 0, 255);
+}
+
+button.add-movie:hover {
+    background-color: rgba(51, 0, 102);
+    color: white;
+}
+
+button.add-movie:active {
+    background-color: rgba(34, 0, 68);
+}
+
+button.theme-toggle {
+    background-color: rgba(0, 136, 169);
+}
+
+button.theme-toggle:hover {
+    background-color: rgba(0, 102, 128);
+    color: white;
+}
+
+button.theme-toggle:active {
+    background-color: rgba(0, 68, 85);
+}
+
+button.filters-toggle {
+    background-color: rgba(0, 204, 102);
+}
+
+button.filters-toggle:hover {
+    background-color: rgba(0, 153, 76);
+    color: white;
+}
+
+button.filters-toggle:active {
+    background-color: rgba(0, 102, 51);
+}
