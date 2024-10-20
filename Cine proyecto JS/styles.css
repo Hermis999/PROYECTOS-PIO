@@ -9,25 +9,57 @@ body {
 
 /* Header */
 header {
-    background-color: #292929e5;
-    color: white;
-    margin: 0;
-    padding: 0px;
-    text-align: center;
+    position: relative;
+    height: 300px; /* ajusta según la altura que desees */
+    overflow: hidden;
 }
-    
 
-header img {
-    width: 180px;
-    height: 300px;
-    display: inline-block;
-    margin-right: -3px;
-    background-size: cover;
+.header-images {
+    display: flex;
+    justify-content: space-between; /* distribuye las imágenes */
+    height: 100%;
+}
+
+.header-images img {
+    width: 100%; /* ajusta las imágenes al ancho disponible */
+    object-fit: cover; /* asegura que las imágenes se ajusten sin distorsión */
+}
+
+header h1 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 4rem;
+    text-align: center;
 }
 
 /* Formulario de agregar película */
+nav {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(44, 44, 44, 0.881);
+}
+
 form {
     margin-bottom: 20px;
+}
+
+aside {
+    background-color: rgba(79, 79, 79, 0.881);
+    margin: 40px 20px;
+    padding: 20px;
+    border-radius: 1%;
+}
+
+button {
+    background-color: #232323;
+    color: white;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 label {
@@ -45,21 +77,29 @@ input {
     flex-wrap: wrap;
     gap: 20px;
 }
-
 /* Estilos de cada tarjeta de película */
 .movie-card {
     width: 200px;
-    background-color: rgba(68, 0, 255);
+    background-color: rgba(59, 59, 59, 0.881);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     color: #f0f0f0;
+    border: solid 2px black;
 }
 
 .movie-card img {
-    width: 100%;
+    width: 190px;
+    height: 250px;
     border-radius: 10px;
+    border: solid 2px black;
+}
+
+.movie-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Estilos del modal */
@@ -77,12 +117,25 @@ input {
 }
 
 .modal-content {
-    background-color: rgb(68, 0, 255);
+    background-color: rgb(133, 0, 228);
+    width: 400px;
+    height: 500px;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     position: relative;
     color: #f0f0f0;
+    border: solid 2px black;
+    word-wrap: break-word;
+}
+.modal-content img {
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    border: solid 2px black;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 125px);
 }
 
 .close {
@@ -96,17 +149,37 @@ input {
     display: none;
 }
 
+#filters {
+    margin: 10px;
+}
+
 /* Estilos del modo oscuro */
-body.dark-mode {
-    background-color: white;
+body.other-mode {
+    background-color: rgb(197, 197, 197);
     color: #333;
 }
-
-header.dark-mode {
-    background-color: white;
-    color: black;
+header.other-mode {
+    background-color: #333;
+}
+aside.other-mode {
+    background-color: rgba(238, 3, 3, 0.881);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 1%;
+}
+.movie-card.other-mode {
+    background-color: rgb(108, 107, 112);
+    box-shadow: 0 0 5px rgba(197, 36, 36, 0.1);
+    color: white;
+}
+.modal-content.other-mode {
+    background-color: rgb(108, 107, 112);
+    color: white;
 }
 
+
+/* botones */
+/*
 button.add-movie {
     background-color: rgba(68, 0, 255);
     padding: 5px 10px;
@@ -151,3 +224,4 @@ button.filters-toggle:hover {
 button.filters-toggle:active {
     background-color: rgba(0, 102, 51);
 }
+*/
