@@ -130,6 +130,17 @@ sortMovies.addEventListener('change', (e) => {
 // Cambiar entre modo oscuro y claro
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('other-mode');
+    document.querySelector('nav').classList.toggle('other-mode');
+    document.querySelector('aside').classList.toggle('other-mode');
+
+    document.querySelectorAll('button').forEach(button => {
+        button.classList.toggle('other-mode');
+    });
+    
+    document.querySelectorAll('.movie-card').forEach(card => {
+        card.classList.toggle('other-mode');
+    });
+    
     themeToggle.textContent = document.body.classList.contains('other-mode') 
         ? 'Cambiar a modo oscuro' 
         : 'Cambiar a modo claro';

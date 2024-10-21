@@ -18,48 +18,57 @@ header {
     display: flex;
     justify-content: space-between; /* distribuye las imágenes */
     height: 100%;
-}
-
-.header-images img {
-    width: 100%; /* ajusta las imágenes al ancho disponible */
-    object-fit: cover; /* asegura que las imágenes se ajusten sin distorsión */
+    width: 190px;
 }
 
 header h1 {
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 4rem;
+    font-size: 6rem;
     text-align: center;
+}
+header button {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background-color: #979797;
 }
 
 /* Formulario de agregar película */
 nav {
-    display: flex;
-    align-items: center;
     padding: 20px;
-    background-color: rgba(44, 44, 44, 0.881);
+    background-color: rgba(44, 44, 44, 0.968);
 }
-
-form {
-    margin-bottom: 20px;
+nav button {
+    position: relative;
+    padding: 10px 15px;
+    margin: 0px 5px;
+    left: 38.5%;
+    border-radius: 8%;
 }
 
 aside {
+    position: absolute;
+    top: 440px;
     background-color: rgba(79, 79, 79, 0.881);
-    margin: 40px 20px;
+    margin: 0 20px;
     padding: 20px;
     border-radius: 1%;
 }
 
 button {
-    background-color: #232323;
-    color: white;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    background-color: #bababa;
+    color: rgb(0, 0, 0);
     cursor: pointer;
+}
+
+form {
+    margin-bottom: 10px;
+    position: absolute;
+    right: 10px;
 }
 
 label {
@@ -69,11 +78,27 @@ label {
 input {
     margin-right: 10px;
 }
-
-
+#addMovieToggle {
+    margin: 20px;
+}
+#addMovieForm {
+    position: absolute;
+    right: 20px;
+    top: 375px;
+    margin: 10px;
+}
+#filtersToggle {
+    margin: 5px 10px;
+}
+#filters {
+    position: absolute;
+    top: 18px;
+    left: 150px;
+}
 /* Contenedor de las películas */
 #movieList {
     display: flex;
+    margin-top: 10px;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -155,73 +180,24 @@ input {
 
 /* Estilos del modo oscuro */
 body.other-mode {
-    background-color: rgb(197, 197, 197);
+    background-color: rgb(219, 219, 219);
     color: #333;
 }
 header.other-mode {
     background-color: #333;
 }
+nav.other-mode {
+    background-color: rgba(101, 101, 101, 0.881);
+}
 aside.other-mode {
-    background-color: rgba(238, 3, 3, 0.881);
-    margin: 20px;
-    padding: 20px;
-    border-radius: 1%;
+    background-color: rgba(175, 175, 175, 0.881);
+}
+button.other-mode {
+    background-color: #535353;
+    color: rgb(228, 228, 228);
 }
 .movie-card.other-mode {
-    background-color: rgb(108, 107, 112);
+    background-color: rgb(129, 129, 129);
     box-shadow: 0 0 5px rgba(197, 36, 36, 0.1);
     color: white;
 }
-.modal-content.other-mode {
-    background-color: rgb(108, 107, 112);
-    color: white;
-}
-
-
-/* botones */
-/*
-button.add-movie {
-    background-color: rgba(68, 0, 255);
-    padding: 5px 10px;
-    margin-right: 10px;
-
-}
-button.add-movie {
-    background-color: rgba(68, 0, 255);
-}
-
-button.add-movie:hover {
-    background-color: rgba(51, 0, 102);
-    color: white;
-}
-
-button.add-movie:active {
-    background-color: rgba(34, 0, 68);
-}
-
-button.theme-toggle {
-    background-color: rgba(0, 136, 169);
-}
-
-button.theme-toggle:hover {
-    background-color: rgba(0, 102, 128);
-    color: white;
-}
-
-button.theme-toggle:active {
-    background-color: rgba(0, 68, 85);
-}
-
-button.filters-toggle {
-    background-color: rgba(0, 204, 102);
-}
-
-button.filters-toggle:hover {
-    background-color: rgba(0, 153, 76);
-    color: white;
-}
-
-button.filters-toggle:active {
-    background-color: rgba(0, 102, 51);
-}
-*/

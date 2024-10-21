@@ -10,6 +10,8 @@
 
     <!-- Header con un logo -->
     <header>
+        <!-- Botones para cambiar de tema y mostrar filtros-->
+        <button id="themeToggle">Cambiar a modo claro</button>
         <div class="header-images">
             <img src="imagen/endgame.jpg" alt="">
             <img src="imagen/venom2.jpg" alt="">
@@ -24,26 +26,28 @@
     </header>
 
     <nav>
-        <!-- Formulario para agregar películas -->
-        <form id="addMovieForm" class="agregar hidden">
-            <label for="movieTitle">Título:</label>
-            <input type="text" id="movieTitle" placeholder="Título de la película" required>
-    
-            <label for="movieYear">Año:</label>
-            <input type="number" id="movieYear" placeholder="Año de estreno" required>
-    
-            <label for="moviePoster">Póster (URL):</label>
-            <input type="url" id="moviePoster" placeholder="URL del póster" required>
-    
-            <button type="submit">Agregar Película</button>
-        </form>
-    
-        <!-- Botones para cambiar de tema y mostrar filtros-->
-        <button id="themeToggle">Cambiar a modo claro</button>
+        <button id="cartelera">Cartelera</button>
+        <button id="proximamente">Proximamente</button>
+        <button id="reservas">Reservas</button>
+    </nav>
+    <button id="addMovieToggle">Agregar Peliculas</button>
+    <!-- Formulario para agregar películas -->
+    <form id="addMovieForm" class="agregar hidden">
+        <button type="submit">Agregar Película</button>
+        <label for="movieTitle">Título:</label>
+        <input type="text" id="movieTitle" placeholder="Título de la película" required>
+
+        <label for="movieYear">Año:</label>
+        <input type="number" id="movieYear" placeholder="Año de estreno" required>
+
+        <label for="moviePoster">Póster (URL):</label>
+        <input type="url" id="moviePoster" placeholder="URL del póster" required>
+
+        <label for="movieDescription">Descripción:</label>
+        <textarea id="movieDescription" placeholder="Descripción de la pelicula" required></textarea>
+    </form>
+    <aside>
         <button id="filtersToggle">Mostrar Filtros</button>
-        <button id="addMovieToggle">Agregar Peliculas</button>
-    
-        <!-- Filtros y opciones de orden -->
         <div id="filters" class = "hidden">
             <label for="yearFilter">Filtrar por año:</label>
             <input type="number" id="yearFilter" placeholder="Año">
@@ -54,11 +58,9 @@
                 <option value="year">Año</option>
             </select>
         </div>
-    </nav>
-    <aside>
+        <!-- Filtros y opciones de orden -->
         <!-- Contenedor para las tarjetas de películas -->
         <div id="movieList"></div>
-
         <!-- Modal para mostrar detalles de la película -->
         <div id="modal" class="modal hidden">
             <div class="modal-content">
