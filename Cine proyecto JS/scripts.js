@@ -43,6 +43,11 @@ function displayMovies(movies) {
             <button class="favorite-btn" onclick="markAsFavorite(${index})">★</button>
         `;
 
+        // Comprobar si la película tiene una descripción
+        if (!movie.description) {
+            console.error(`La película ${movie.title} no tiene descripción.`);
+        }
+
         // Hacer clic en la tarjeta muestra los detalles en el modal
         movieCard.addEventListener('click', () => showModal(movie));
         movieList.appendChild(movieCard);
@@ -51,9 +56,15 @@ function displayMovies(movies) {
 
 // Mostrar detalles de una película en el modal
 function showModal(movie) {
+    // Comprobar si la película tiene título y año
+    if (!movie.title || !movie.year) {
+        console.error(`La película ${movie.title} no tiene título o año.`);
+        return;
+    }
+
     modalTitle.textContent = movie.title;
     modalYear.textContent = `Año: ${movie.year}`;
-    modalDescription.textContent = `Descripción: ${movie.description}`; // Mostrar la descripción de la película
+    modalDescription.textContent = `Descripción: ${movie.description || 'No disponible'}`; // Mostrar la descripción de la película si existe
     modalPoster.src = movie.poster;
     modal.classList.remove('hidden'); // Mostrar el modal
 }
@@ -75,7 +86,7 @@ addMovieForm.addEventListener('submit', (e) => {
         // Añadir nueva película al arreglo
         movies.push({ title, year, description, poster });
         displayMovies(movies); // Mostrar todas las películas nuevamente
-        saveMovies() // Guardar películas en localStorage
+        saveMovies(); // Guardar películas en localStorage
         addMovieForm.reset(); // Reiniciar el formulario
     }
 });
@@ -120,7 +131,8 @@ sortMovies.addEventListener('change', (e) => {
     const sortedMovies = [...movies].sort((a, b) => {
         if (sortBy === 'title') {
             return a.title.localeCompare(b.title);
-        } else if (sortBy === 'year') {
+        } 
+        else if (sortBy === 'year') {
             return a.year - b.year;
         }
     });
@@ -154,7 +166,7 @@ filtersToggle.addEventListener('click', () => {
     filtersToggle.textContent = filters.classList.contains('hidden') 
         ? 'Mostrar Filtros' 
         : 'Ocultar Filtros';
-})
+});
 
 // Mostrar filtros
 
@@ -164,4 +176,4 @@ addMovieToggle.addEventListener('click', () => {
     addMovieToggle.textContent = addMovieForm.classList.contains('hidden') 
         ? 'Agregar Peliculas' 
         : 'Ocultar Formulario';
-})
+});

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIOGAME</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <img src="https://pokemongolive.com/img/posts/summerofgo2019.jpg" alt="">
+        <h1>PioPokedex</h1>
+        <P>Atrapalos a todos</P>
+    </header>
+
+    <nav></nav>
+
+    <aside>
+        <div id="filters">
+            <label for="nameFilter"></label>
+            <input type="text" id="nameFilter" placeholder="Search">
+            <label for="sortPokemons">Ordenar por: </label>
+            <select id="sortPokemons">
+                <option value="idASC">ID ↓</option>
+                <option value="idDESC">ID ↑</option>
+                <option value="nameDESC">Nombre ↓</option>
+                <option value="nameASC">Nombre ↑</option>
+                <option value="type">Tipo</option>
+            </select>
+            <button id="themeToggle">Cambiar a modo claro</button>
+        </div>
+        <img id = "perfil" src="https://img.icons8.com/?size=100&id=Fx70T4fgtNmt&format=png&color=000000" alt="">
+        <div id="pokemonList"></div>
+        <!-- Modal para mostrar detalles de la película -->
+        <div id="modalPokemon" class="modalPokemon hidden">
+            <div class="modalPokemon-content">
+                <span id="closeModalPokemon" class="close">&times;</span>
+                <h3 id="modalName"></h3>
+                <p id="modalId"></p>
+                <img id="modalImage" src="" alt="Imagen del pokemon">
+                <p id="modalType"></p>
+                <p id="modalDescription"></p>    
+            </div>
+        </div> 
+    </aside>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
