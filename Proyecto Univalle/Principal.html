@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PioFilms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Levitador Triple</h1>
+    </header>
+    <main class="container">
+        <div class="tube-meter-container">
+            <div class="meter-frame">
+                <div class="marcador">50</div>
+                <div class="marcador">45</div>
+                <div class="marcador">40</div>
+                <div class="marcador">35</div>
+                <div class="marcador">30</div>
+                <div class="marcador">25</div>
+                <div class="marcador">20</div>
+                <div class="marcador">15</div>
+                <div class="marcador">10</div>
+                <div class="marcador">5</div>
+                <div class="marcador">0</div>
+                <div class="tube" id="tube1"></div>
+            </div>
+        </div>
+        <div class="tube-meter-container">
+            <div class="meter-frame">
+                <div class="tube" id="tube2"></div>
+            </div>
+        </div>
+        <div class="tube-meter-container">
+            <div class="meter-frame">
+                <div class="tube" id="tube3"></div>
+            </div>
+        </div>
+    </main>
+    <aside>
+        <label for="size1">Tamaño del tubo 1:</label>
+        <input type="number" id="size1" value="0" min="0" max="50" onchange="adjustSize('tube1', this.value)">
+        <label for="size2">Tamaño del tubo 2:</label>
+        <input type="number" id="size2" value="0" min="0" max="50" onchange="adjustSize('tube2', this.value)">
+        <label for="size3">Tamaño del tubo 3:</label>
+        <input type="number" id="size3" value="0" min="0" max="50" onchange="adjustSize('tube3', this.value)">
+    </aside>
+    <script src="scripts.js"></script>
+    no se
+</body>
+</html>

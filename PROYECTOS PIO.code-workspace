@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "PROYECTO-GRUPO-1",
+			"path": "Proyecto Todos/PROYECTO-GRUPO-1"
+		},
+		{
+			"path": "../../../Downloads/g7html-master"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "g7html-master"
+	}
+}

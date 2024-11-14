@@ -1,0 +1,32 @@
+body{
+    background-color:rgb(155, 225, 255);
+}
+
+.meter-frame {
+    border: 1px solid black;
+    width: 30px;
+    height: 200px;
+    position: relative;
+}
+
+.tube {
+    width: 30px;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    background-color: blue;
+}
+
+.tube-meter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 10px;
+
+}
+.container{
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end; 
+    text-align: center;
+}
