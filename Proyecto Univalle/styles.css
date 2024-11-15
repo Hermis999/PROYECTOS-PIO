@@ -1,32 +1,46 @@
 body{
     background-color:rgb(155, 225, 255);
 }
-
-.meter-frame {
+header{
+    display: flex;
+    justify-content: center;
+}
+main{
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+}
+.tube {
+    display: flex;
     border: 1px solid black;
-    width: 30px;
-    height: 200px;
+    width: 60px;
+    height: 450px;
     position: relative;
 }
-
-.tube {
-    width: 30px;
-    height: 0;
-    position: absolute;
-    bottom: 0;
-    background-color: blue;
+.marcador{
+    margin: 21px 10px 0px 30px;
+    height: 50px;
 }
-
-.tube-meter-container {
+.marcador-tube{
     display: flex;
+    position: relative;
+    height: 0px;
     flex-direction: column;
-    align-items: center;
-    margin: 0px 10px;
-
+    justify-content: space-between;
+    justify-content: flex-end;
+    top: 220px;
 }
-.container{
+.tubos{
     display: flex; 
     justify-content: center; 
-    align-items: flex-end; 
+    align-items: center; 
     text-align: center;
+}
+.controls{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+.altura{
+    margin: 10px;
 }
