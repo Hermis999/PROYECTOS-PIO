@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERFACE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="Principal.html" class="botonPestañas" id="recepcionDatos" style="text-decoration: none;">Recepcion de Datos</a>
+        <a href="#" class="botonPestañas" id="envioDatos" style="background-color: rgb(107, 107, 107); text-decoration: none;">Envio de Datos</a>
+    </header>
+    <h1>Levitador Triple</h1>
+    <aside class="controls">
+        <div class="altura">
+            <h1>Enviar Numeros</h1>
+            <form action=\"/enviar\" method=\"POST\">
+            <label>Numero1:</label><input type=\"number\" name=\"numero1\" required><br>
+            <label>Numero2:</label><input type=\"number\" name=\"numero2\" required><br>
+            <input type=\"submit\" value=\"Enviar\">
+            </form>
+        </div>
+    </aside>
+</body>
+</html>

@@ -8,19 +8,34 @@
 </head>
 <body>
     <header>
-        <h1>Levitador Triple</h1>
+        <a href="#" class="botonPestañas" id="recepcionDatos" style="background-color: rgb(107, 107, 107); text-decoration: none;">Recepcion de Datos</a>
+        <a href="Envio.html" class="botonPestañas" id="envioDatos" style="text-decoration: none;">Envio de Datos</a>
     </header>
-    <main class="controls">
-        <div class="altura">
-            <label for="size1" class="altura">Tamaño del tubo 1:</label>
-            <input type="number" id="size1" value="0" min="0" max="50" class="altura" onchange="adjustSize('tube1', this.value)">
-            <label for="size2" class="altura">Tamaño del tubo 2:</label>
-            <input type="number" id="size2" value="0" min="0" max="50" class="altura" onchange="adjustSize('tube2', this.value)">
-            <label for="size3" class="altura">Tamaño del tubo 3:</label>
-            <input type="number" id="size3" value="0" min="0" max="50" class="altura" onchange="adjustSize('tube3', this.value)">
+    <h1>Levitador Triple</h1>
+    <main>
+        <div class="datosRecividos">
+            <h2>Datos Recividos</h2>
+            <p>PWM del Motor 1: %PWM1%</p>
+            <p>PWM del Motor 2: %PWM2%</p>
+            <p>PWM del Motor 3: %PWM3%</p>
+            <p>Posicion actual del levitador 1: <span id="SP1">%SP1%</span></p>
+            <script>
+                const tube1Size = document.getElementById('SP1').textContent;
+                adjustSize('tube1', tube1Size);
+            </script>
+            <p>Posicion actual del levitador 2: <span id="SP2">%SP2%</span></p>
+            <script>
+                const tube2Size = document.getElementById('SP2').textContent;
+                adjustSize('tube2', tube2Size);
+            </script>
+            <p>Posicion actual del levitador 3: <span id="SP3">%SP3%</span></p>
+            <script>
+                const tube3Size = document.getElementById('SP3').textContent;
+                adjustSize('tube3', tube3Size);
+            </script>
         </div>
     </main>
-    <aside class="container">
+    <aside class="container"></aside>
         <div class="tubos">
             <div class="marcador-tube">
                 <div class="marcador">50</div>
@@ -71,6 +86,7 @@
                 <div class="tube" id="tube3"></div>
             </div>
         </div>
+        <div id="cuadro"></div>
     </aside>
 
     <script src="scripts.js"></script>

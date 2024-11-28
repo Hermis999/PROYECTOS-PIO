@@ -1,5 +1,7 @@
 body{
-    background-color:rgb(155, 225, 255);
+    background-color:rgb(192, 192, 192);
+    font-family: Arial; 
+    margin-top: 50px;
 }
 header{
     display: flex;
@@ -7,11 +9,55 @@ header{
 }
 main{
     display: flex;
-    justify-content: flex-start;
     position: absolute;
+    background-color: rgb(171, 171, 171);
+    padding: 160px 280px 160px 80px;
+    top: 0%;
+    left: 0%;
+    height: 415px;
+    width: 100px;
+    white-space: nowrap;
+}
+h1{
+    position: absolute;
+    font-size: 50px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+p{
+    border: 1px solid black;
+    padding: 8px;
+    width: 320px;
+}
+.botonPestañas{
+    margin: 6px;
+    padding: 10px;
+    color: black;
+    background-color: rgb(165, 165, 165);
+    border: 2px solid black;
+    border-radius: 10px; /* Makes the button rounded */
+}
+.container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    left: 52%;
+    transform: translateX(-50%);
+}
+
+.cuadrado{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 300px;
+    background-color: black;
 }
 .tube {
     display: flex;
+    background-color: rgba(255, 255, 255, 0.252);
     border: 1px solid black;
     width: 60px;
     height: 450px;
@@ -32,6 +78,8 @@ main{
 }
 .tubos{
     display: flex; 
+    left: 50%;
+    top: 20%;
     justify-content: center; 
     align-items: center; 
     text-align: center;
@@ -43,4 +91,13 @@ main{
 }
 .altura{
     margin: 10px;
+}
+#cuadro {
+    position: fixed;
+    z-index: 9999;
+    top: 75%;
+    left: 39%;
+    width: 400px;
+    height: 100px;
+    background-color: rgb(59, 59, 59);
 }

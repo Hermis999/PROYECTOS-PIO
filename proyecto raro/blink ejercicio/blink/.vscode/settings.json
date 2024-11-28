@@ -3,6 +3,8 @@
   "idf.portWin": "COM4",
   "idf.adapterTargetName": "esp32",
   "idf.openOcdConfigs": [
-    "board/esp32-wrover-kit-3.3v.cfg"
-  ]
+    "interface/ftdi/esp32_devkitj_v1.cfg",
+    "target/esp32-solo-1.cfg"
+  ],
+  "idf.flashType": "UART"
 }

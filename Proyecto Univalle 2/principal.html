@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control PID</title>
+    <style>                      
+        body{
+            background-color:rgb(192, 192, 192);
+            font-family: Arial;
+            margin-top: 40px;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        main{
+            display: flex;
+            position: absolute;
+            background-color: rgb(171, 171, 171);
+            padding: 80px 280px 240px 80px;
+            top: 0%;
+            left: 0%;
+            height: 415px;
+            width: 150px;
+            white-space: nowrap;
+            flex-direction: column;
+        }
+        h1{
+            position: absolute;
+            font-size: 50px;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        h2{
+            margin: 0px;
+        }
+        img{
+            width: 22%;
+            margin:5px 10px;
+        }
+        .normal{
+            border: 1px solid black;
+            padding: 8px 8px 8px 8px;
+            margin: 4px;
+            width: 320px;
+        }
+        .small{
+            border: 1px solid rgb(0, 0, 0);
+            padding: 8px 8px 8px 8px;
+            margin: 4px;
+            width: 33%;
+            flex-direction: row;
+        }
+        .PID1, .PID2, .PID3 {
+            display: flex;
+            flex-direction: row;
+            width: 345px;
+            justify-content: space-between;
+        }
+        .botonPestañas{
+            margin: 6px;
+            padding: 10px;
+            color: black;
+            background-color: rgb(165, 165, 165);
+            border: 2px solid black;
+            border-radius: 10px; /* Makes the button rounded */
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 25%;
+            left: 52%;
+            transform: translateX(-50%);
+        }
+        .tube {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.252);
+            border: 1px solid black;
+            width: 60px;
+            height: 450px;
+            position: relative;
+        }
+        .marcador{
+            margin: 21px 10px 0px 30px;
+            height: 50px;
+        }
+        .marcador-tube{
+            display: flex;
+            position: relative;
+            height: 0px;
+            flex-direction: column;
+            justify-content: space-between;
+            justify-content: flex-end;
+            top: 220px;
+        }
+        .tubos{
+            display: flex; 
+            left: 50%;
+            top: 20%;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+        }
+        .altura{
+            margin: 10px;
+        }
+        #cuadro {
+            position: fixed;
+            z-index: 9999;
+            top: 98%;
+            left: 2%;
+            width: 400px;
+            height: 100px;
+            background-color: rgb(59, 59, 59);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="botonesPestañas">
+            <a href="#" class="botonPestañas" id="recepcionDatos" style="background-color: rgb(107, 107, 107); text-decoration: none;">Recepcion de Datos</a>
+            <a href="/envio" class="botonPestañas" id="envioDatos" style="text-decoration: none;">Envio de Datos</a>
+        </div>
+        <h1>Levitador Triple</h1>
+    </header>
+    <main class="controls">
+        <h2>Datos Recibidos</h2>
+        <div class="datosRecividos">
+        <h3>Levitador 1</h3>
+            <p class="normal">PWM del Motor 1: <span id="PWM1"></span></p>
+            <p class="normal">Posicion actual del levitador 1: <span id="SP1"></span></p>
+            <div class="PID1">
+                <p class="small">Valor P: <span id="valorP1">1234</span></p>
+                <p class="small">Valor I: <span id="valorI1">34</span></p>
+                <p class="small">Valor D: <span id="valorD1"></span></p>
+            </div>
+            <h3>Levitador 2</h3>
+            <p class="normal">PWM del Motor 2: <span id="PWM2"></span></p>
+            <p class="normal">Posicion actual del levitador 2: <span id="SP2"></span></p>
+            <div class="PID2">
+                <p class="small">Valor P: <span id="valorP2">121</span></p>
+                <p class="small">Valor I: <span id="valorI2"></span></p>
+                <p class="small">Valor D: <span id="valorD2">12</span></p>
+            </div>
+            <h3>Levitador 3</h3>
+            <p class="normal">PWM del Motor 3: <span id="PWM3"></span></p>
+            <p class="normal">Posicion actual del levitador 3: <span id="SP3"></span></p>
+            <div class="PID3">
+                <p class="small">Valor P: <span id="valorP3">12</span></p>
+                <p class="small">Valor I: <span id="valorI3">11</span></p>
+                <p class="small">Valor D: <span id="valorD3"></span></p>
+            </div>
+        </div>
+    </main>
+    <aside class="container">
+      <div class="tubos">
+          <div class="marcador-tube">
+              <div class="marcador">50</div>
+              <div class="marcador">45</div>
+              <div class="marcador">40</div>
+              <div class="marcador">35</div>
+              <div class="marcador">30</div>
+              <div class="marcador">25</div>
+              <div class="marcador">20</div>
+              <div class="marcador">15</div>
+              <div class="marcador">10</div>
+              <div class="marcador">5</div>
+              <div class="marcador">0</div>
+          </div>
+          <div class="container-tube">
+              <div class="tube" id="tube1"></div>
+          </div>
+          <div class="marcador-tube">
+              <div class="marcador">50</div>
+              <div class="marcador">45</div>
+              <div class="marcador">40</div>
+              <div class="marcador">35</div>
+              <div class="marcador">30</div>
+              <div class="marcador">25</div>
+              <div class="marcador">20</div>
+              <div class="marcador">15</div>
+              <div class="marcador">10</div>
+              <div class="marcador">5</div>
+              <div class="marcador">0</div>
+          </div>
+          <div class="container-tube">
+              <div class="tube" id="tube2"></div>
+          </div>
+          <div class="marcador-tube">
+              <div class="marcador">50</div>
+              <div class="marcador">45</div>
+              <div class="marcador">40</div>
+              <div class="marcador">35</div>
+              <div class="marcador">30</div>
+              <div class="marcador">25</div>
+              <div class="marcador">20</div>
+              <div class="marcador">15</div>
+              <div class="marcador">10</div>
+              <div class="marcador">5</div>
+              <div class="marcador">0</div>
+          </div>
+          <div class="container-tube">
+              <div class="tube" id="tube3"></div>
+          </div>
+      </div>
+      <div id="cuadro" style="display: flex; justify-content: space-between; align-items: center;">
+        <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
+        <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
+        <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
+      </div>
+    </aside>
+
+  <script>
+
+    setInterval(() => {
+        fetch('/PWM1')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('PWM1').textContent = data;
+                adjustSize('tube1', data);
+            });
+        fetch('/PWM2')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('PWM2').textContent = data;
+                adjustSize('tube2', data);
+            });
+        fetch('/PWM3')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('PWM3').textContent = data;
+                adjustSize('tube3', data);
+            });
+        fetch('/SP1')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('SP1').textContent = data;
+                adjustSize('tube1', data);
+            });
+        fetch('/SP2')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('SP2').textContent = data;
+                adjustSize('tube2', data);
+            });
+        fetch('/SP3')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('SP3').textContent = data;
+                adjustSize('tube3', data);
+            });
+    }, 1000);
+
+    
+    setInterval(() => {
+        fetch('/PID1P')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('valorP1').textContent = data;
+            });
+        fetch('/PID1I')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('valorI1').textContent = data;
+            });
+        fetch('/PID1D')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('valorD1').textContent = data;
+            });
+
+        fetch('/PID2P')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('valorP2').textContent = data;
+            });
+        fetch('/PID2I')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('valorI2').textContent = data;
+            });
+        fetch('/PID2D')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('valorD2').textContent = data;
+            });
+
+        fetch('/PID3P')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('valorP3').textContent = data;
+            });
+        fetch('/PID3I')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('valorI3').textContent = data;
+            });
+        fetch('/PID3D')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('valorD3').textContent = data;
+            });
+    }, 5000);
+
+//    setTimeout(function() {
+//      location.reload();
+//    }, 20000); // Actualizar cada 20 segundos 
+
+    function adjustSize(tubeId, size) {
+      const maxSize = 50;
+      const initialSize = 0;
+      const newPosition = Math.max(initialSize, Math.min((size * 8)+5, (maxSize * 8))+5);
+      const tube = document.getElementById(tubeId);
+      let ficha = tube.querySelector('.ficha');
+
+      if (!ficha) {
+          // Crear el contenedor para la flecha
+          ficha = document.createElement('div');
+          ficha.className = 'ficha';
+          ficha.style.position = 'absolute';
+          ficha.style.left = '50%';
+          ficha.style.transform = 'translateX(-50%)';
+          ficha.style.bottom = '0px';
+          
+          // Crear la punta de flecha (triángulo)
+          const punta = document.createElement('div');
+          punta.style.width = '0';
+          punta.style.height = '0';
+          punta.style.borderLeft = '15px solid transparent';
+          punta.style.borderRight = '15px solid transparent';
+          punta.style.borderBottom = '20px solid red';
+
+          // Crear el cuerpo de la flecha (rectángulo)
+          const cuerpo = document.createElement('div');
+          cuerpo.style.width = '15px'; // hacer el rectángulo más delgado
+          cuerpo.style.height = '15px';
+          cuerpo.style.backgroundColor = 'red';
+          cuerpo.style.position = 'absolute';
+          cuerpo.style.left = '50%';
+          cuerpo.style.transform = 'translateX(-50%)';
+
+          // Crear el cuerpo de la flecha (rectángulo2)
+          const cuerpo2 = document.createElement('div');
+          cuerpo2.style.width = '25px'; // hacer el rectángulo más delgado
+          cuerpo2.style.height = '8px';
+          cuerpo2.style.backgroundColor = 'red';
+          cuerpo2.style.position = 'absolute';
+          cuerpo2.style.left = '50%';
+          cuerpo2.style.transform = 'translateX(-50%)';
+          cuerpo2.style.top = '30px';
+          // Añadir la punta y el cuerpo a la ficha
+          ficha.appendChild(punta);
+          ficha.appendChild(cuerpo);
+          ficha.appendChild(cuerpo2);
+          tube.appendChild(ficha);
+      }
+
+      ficha.style.bottom = newPosition + 'px';
+    }
+  </script>
+</body>
+</html>

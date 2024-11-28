@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>INTERFACE</title>
+      <style>                     
+        body{
+          background-color:rgb(192, 192, 192);
+          font-family: Arial;
+          margin-top: 40px;
+          margin: 0px;
+          text-align: center;
+        }
+        header{
+          margin: 40px;
+          justify-content: center;
+          flex-direction: column;
+        }
+        main{
+          display: flex;
+          position: absolute;
+          background-color: rgb(171, 171, 171);
+          margin: 0px;
+          top: 0%;
+          left: 0%;
+          height: 100%;
+          width: 22%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          white-space: nowrap;
+        }
+        input { 
+          padding: 10px 20px;
+          margin: 0px 5px;
+          font-size: 16px;
+        }
+        h1{
+          margin: 60px;
+          font-size: 50px;
+        }
+        label{
+          margin: 0px 5px;
+        }
+        .botonPestañas{
+          margin: 6px;
+          padding: 10px;
+          color: black;
+          background-color: rgb(165, 165, 165);
+          border: 2px solid black;
+          border-radius: 10px; /* Makes the button rounded */
+        }
+        .botonPestañas:hover{
+          background-color: rgb(142, 142, 142);
+        }
+        .botones{
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+        }
+        .boton, .botonM, .botonF{
+          margin: 6px;
+          padding: 10px;
+          color: black;
+          background-color: rgb(165, 165, 165);
+          border: 2px solid black;
+          border-radius: 5px; /* Makes the button rounded */
+        }
+        .boton:hover, .botonM:hover, .botonF:hover{
+          background-color: rgb(142, 142, 142);
+          cursor: pointer;
+        }
+        form{
+          display: flex;
+          justify-content: flex-end;
+        }
+        .levitadores{
+          display: flex;
+          width: 60%;
+          padding: 0px 10px;
+          justify-content: flex-end;
+          flex-direction: row;
+          margin: 10px 5px;
+        }
+        @media (max-width: 1430px) {
+          main{
+            position: relative;
+            width: auto;
+            height: 100%;
+            background-color: rgb(20, 98, 255);
+          }
+          form{
+            display: flex;
+            justify-content: center;
+          }
+          .botones{
+            flex-direction: row;
+            margin: 0px;
+          }
+          .botonPestañas{
+            margin: 16px;
+            padding: 15px;
+          }
+          .levitadores{
+            display: flex;
+            width: 100%;
+            margin: 10px 5px;
+          }
+        }
+        @media (max-width: 1100px) {
+          main{
+            min-width: 100%;
+            height: auto;
+            background-color: rgb(81, 162, 242);
+          }
+          .levitadores{
+            flex-direction: column;
+          }
+        }
+        @media (max-width: 450px) {
+          header{
+            margin: 0px;
+          }
+          main{
+            min-width: 100%;
+            height: auto;
+            background-color: rgb(52, 218, 255);
+          }
+          .botonesPestañas{
+            display: flex;
+            flex-direction: row;
+            top: 0px;
+            width: 100%;
+            height: 80px;
+            justify-content: space-between;
+          }
+          .botonPestañas{
+            display: flex;
+            margin: 0px;
+            padding: 10px;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            width: 45%;
+            border-radius: 0px; /* Makes the button rounded */
+          }
+          .botones{
+            flex-direction: column;
+          }
+          .boton, .botonM, .botonF{
+            margin: 6px;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 8px; /* Makes the button rounded */
+          }
+          .levitadores{
+            flex-direction: column;
+          }
+        }
+        .levitador1 , .levitador2 , .levitador3 {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          text-align: center;
+          margin: 0px auto;
+        }
+        .envio{
+          padding: 10px;
+          width: 40%;
+          justify-content: center;
+          align-items: center;
+        }
+        .small{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        .united{
+          display: flex;
+          flex-direction: column;
+          width: 40%;
+          justify-content: space-between;
+        }
+        .PID1, .PID2, .PID3 {
+          display: flex;
+        }
+        .PID1P, .PID1I, .PID1D,
+        .PID2P, .PID2I, .PID2D,
+        .PID3P, .PID3I, .PID3D {
+          display: flex;
+          flex-direction: column;
+          height: 80px;
+          width: 40%;
+        }
+      </style> 
+  </head>
+<body>
+
+  <header>
+    <div class="botonesPestañas">
+      <a href="/" class="botonPestañas" id="recepcionDatos" style="text-decoration: none;">Recepcion de Datos</a>
+      <a href="#" class="botonPestañas" id="envioDatos" style="background-color: rgb(107, 107, 107); text-decoration: none;">Envio de Datos</a>
+    </div>
+    <h1>Levitador Triple</h1>
+  </header>
+  <!-- Botones para encender y apagar el LED -->
+  <main>
+    <h2>Botones de funcion</h2>
+    <div class="botones">
+      <button class="boton" onclick="toggleLED()">ON/OFF de la Maquina</button>
+      <script>
+        function toggleLED() {
+          fetch('/toggle').then(response => response.text()).then(data => {
+            const button = document.querySelector('.boton');
+            if (data === 'LED Encendido') {
+              button.style.backgroundColor = 'green';
+            } else {
+              button.style.backgroundColor = 'red';
+            }
+          });
+        }
+      </script>
+      <button class="botonM" onclick="toggleMOTORS()">ON/OFF Servos</button>
+      <script>
+        function toggleMOTORS() {
+          fetch('/togglemotors').then(response => response.text()).then(data => {
+            const buttonM = document.querySelector('.botonM');
+            if (data === '1') {
+              buttonM.style.backgroundColor = 'green';
+            } else {
+              buttonM.style.backgroundColor = 'red';
+            }
+          });
+        }
+      </script>
+      <button class="botonF" onclick="toggleFUNCION()">ON/OFF Servos</button>
+      <script>
+        function toggleFUNCION() {
+          fetch('/togglefuncion').then(response => response.text()).then(data => {
+            const buttonF = document.querySelector('.botonF');
+            if (data === '1') {
+              buttonF.style.backgroundColor = 'green';
+            } else {
+              buttonF.style.backgroundColor = 'red';
+            }
+          });
+        }
+      </script>
+    </div>
+  </main>
+  <!-- Formulario para enviar valores POST -->
+  <form onsubmit="return sendValues(event)">
+    <div class="levitadores">
+      <div class="levitador1">
+        <h2>Levitador 1</h2>
+        <div class="PID1">
+          <div class="PID1P">
+            <label for="plevel1">Valor P 1:</label>
+            <input type="number" id="plevel1" name="plevel1" min="0" max="10" required>
+            <br>
+          </div>
+          <div class="PID1I">
+            <label for="ilevel1">Valor I 1:</label>
+            <input type="number" id="ilevel1" name="ilevel1" min="0" max="10" required>
+            <br>
+          </div>
+          <div class="PID1D">
+            <label for="dlevel1">Valor D 1:</label>
+            <input type="number" id="dlevel1" name="dlevel1" min="0" max="10" required>
+            <br>
+          </div>
+        </div>
+        <div class="small">
+          <div class="united">
+            <label for="setPoint1">Set Point 1:</label>
+            <input type="number" id="setPoint1" name="setPoint1" min="0" max="50" required>
+            <br>
+          </div>
+          <div class="united">
+            <label for="pwm1">PWM 1:</label>
+            <input type="number" id="pwm1" name="pwm1" min="0" max="255" required>
+            <br>
+          </div>
+          <div class="united">
+            <label for="numero1">Grados 1°:</label>
+            <input type="number" id="numero1" name="numero1" min="0" max="50" required>
+            <br>
+          </div>
+        </div>
+        <div>
+          <button class = "envio" type="submit" onclick="sendValues(event)">Enviar</button>
+        </div>
+      </div>
+      <div class="levitador2">
+        <h2>Levitador 2</h2>
+        <div class="PID2">
+          <div class="PID2P">
+            <label for="plevel2">Valor P 2:</label>
+            <input type="number" id="plevel2" name="plevel2" min="0" max="10" required>
+            <br>
+          </div>
+          <div class="PID2I">
+            <label for="ilevel2">Valor I 2:</label>
+            <input type="number" id="ilevel2" name="ilevel2" min="0" max="10" required>
+            <br>
+          </div>
+          <div class="PID2D">
+            <label for="dlevel2">Valor D 2:</label>
+            <input type="number" id="dlevel2" name="dlevel2" min="0" max="10" required>
+            <br>
+          </div>
+        </div>
+        <div class="small">
+          <div class="united">
+            <label for="setPoint2">Set Point 2:</label>
+            <input type="number" id="setPoint2" name="setPoint2" min="0" max="50" required>
+            <br>
+          </div>
+          <div class="united">
+            <label for="pwm2">PWM 2:</label>
+            <input type="number" id="pwm2" name="pwm2" min="0" max="255" required>
+            <br>
+          </div>
+          <div class="united">
+            <label for="numero2">Grados 2°:</label>
+            <input type="number" id="numero2" name="numero2" min="0" max="50" required>
+            <br>
+          </div>
+        </div>
+        <div>
+          <button class = "envio" type="submit" onclick="sendValues2(event)">Enviar</button>
+        </div>
+      </div>
+      <div class="levitador3">
+        <h2>Levitador 3</h2>
+        <div class="PID3">
+          <div class="PID3P">
+            <label for="plevel3">Valor P 3:</label>
+            <input type="number" id="plevel3" name="plevel3" min="0" max="10" required>
+            <br>
+          </div>
+          <div class="PID3I">
+            <label for="ilevel3">Valor I 3:</label>
+            <input type="number" id="ilevel3" name="ilevel3" min="0" max="10" required>
+            <br>
+          </div>
+          <div class="PID3D">
+            <label for="dlevel3">Valor D 3:</label>
+            <input type="number" id="dlevel3" name="dlevel3" min="0" max="10" required>
+            <br>
+          </div>
+        </div>
+        <div class="small">
+          <div class="united">
+            <label for="setPoint3">Set Point 3:</label>
+            <input type="number" id="setPoint3" name="setPoint3" min="0" max="50" required>
+            <br>
+          </div>
+          <div class="united">
+            <label for="pwm3">PWM 3:</label>
+            <input type="number" id="pwm3" name="pwm3" min="0" max="255" required>
+            <br>
+          </div>
+          <div class="united">
+            <label for="numero3">Grados 3°:</label>
+            <input type="number" id="numero3" name="numero3" min="0" max="50" required>
+            <br>
+          </div>
+        </div>
+        <div>
+          <button class = "envio" type="submit" onclick="sendValues3(event)">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <script>
+    function sendCommand(command) {
+      fetch(command)
+        .then(response => console.log(`Comando enviado: ${command}`))
+        .catch(error => console.error('Error:', error));
+    }
+    function sendValues(event) {
+      event.preventDefault();
+      const plevel1 = document.getElementById('plevel1').value;
+      const ilevel1 = document.getElementById('ilevel1').value;
+      const dlevel1 = document.getElementById('dlevel1').value;
+      const setPoint1 = document.getElementById('setPoint1').value;
+      const pwm1 = document.getElementById('pwm1').value;
+      const numero1 = document.getElementById('numero1').value;
+      fetch('/enviar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `plevel1=${plevel1}&ilevel1=${ilevel1}&dlevel1=${dlevel1}&setPoint1=${setPoint1}&pwm1=${pwm1}&numero1=${numero1}`
+      })
+        .then(response => response.text())
+        .then(data => console.log(`Datos enviados: ${data}`))
+        .catch(error => console.error('Error:', error));
+    }
+    function sendValues2(event) {
+      event.preventDefault();
+      const plevel2 = document.getElementById('plevel2').value;
+      const ilevel2 = document.getElementById('ilevel2').value;
+      const dlevel2 = document.getElementById('dlevel2').value;
+      const setPoint2 = document.getElementById('setPoint2').value;
+      const pwm2 = document.getElementById('pwm2').value;
+      const numero2 = document.getElementById('numero2').value;
+      fetch('/enviar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `plevel2=${plevel2}&ilevel2=${ilevel2}&dlevel2=${dlevel2}&setPoint2=${setPoint2}&pwm2=${pwm2}&numero2=${numero2}`
+      })
+        .then(response => response.text())
+        .then(data => console.log(`Datos enviados: ${data}`))
+        .catch(error => console.error('Error:', error));
+    }
+
+    function sendValues3(event) {
+      event.preventDefault();
+      const plevel3 = document.getElementById('plevel3').value;
+      const ilevel3 = document.getElementById('ilevel3').value;
+      const dlevel3 = document.getElementById('dlevel3').value;
+      const setPoint3 = document.getElementById('setPoint3').value;
+      const pwm3 = document.getElementById('pwm3').value;
+      const numero3 = document.getElementById('numero3').value;
+      fetch('/enviar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `plevel3=${plevel3}&ilevel3=${ilevel3}&dlevel3=${dlevel3}&setPoint3=${setPoint3}&pwm3=${pwm3}&numero3=${numero3}`
+      })
+        .then(response => response.text())
+        .then(data => console.log(`Datos enviados: ${data}`))
+        .catch(error => console.error('Error:', error));
+    }
+
+  </script>
+</body>
+</html>

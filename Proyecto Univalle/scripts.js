@@ -1,3 +1,4 @@
+
 function adjustSize(tubeId, size) {
     const maxSize = 50;
     const initialSize = 0;

@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "cmake.sourceDirectory": "C:/Users/hermi/OneDrive/Documentos/PROYECTOS PIO/proyecto raro/blink ejercicio/blink"
 }

@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "blink",
-    "project_version":    "dc616d0-dirty",
+    "project_version":    "7c074da-dirty",
     "project_path":       "C:/Users/hermi/OneDrive/Documentos/PROYECTOS PIO/proyecto raro/blink ejercicio/blink",
     "idf_path":           "C:/Users/hermi/esp/v5.3.1/esp-idf",
     "build_dir":          "C:/Users/hermi/OneDrive/Documentos/PROYECTOS PIO/proyecto raro/blink ejercicio/blink/build",
