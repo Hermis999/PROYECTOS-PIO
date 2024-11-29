@@ -8,32 +8,31 @@
         body{
             background-color:rgb(192, 192, 192);
             font-family: Arial;
-            margin-top: 40px;
+            margin: 0px;
+            text-align: center;
         }
         header{
-            display: flex;
+            margin: 40px;
             justify-content: center;
             flex-direction: column;
         }
-        
         main{
-            display: flex;
+            display: inline-flex;
             position: absolute;
             background-color: rgb(171, 171, 171);
-            padding: 80px 280px 240px 80px;
+            margin: 0px;
             top: 0%;
             left: 0%;
-            height: 415px;
-            width: 150px;
-            white-space: nowrap;
+            height: 100%;
+            width: 35%;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap;
         }
         h1{
-            position: absolute;
+            margin: 20px;
             font-size: 50px;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
         }
         h2{
             margin: 0px;
@@ -42,23 +41,47 @@
             width: 22%;
             margin:5px 10px;
         }
+        aside{
+            height: 60%;
+            width: 30%;
+            padding-right: 20px;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 26%;
+            left: 55%;
+            transform: translateX(-50%);
+        }
+        .botonesPestañas{
+            display: flex;
+            justify-content: center;
+        }
+        .datosRecibidos{
+            position: relative;
+            justify-content: center;
+            flex-direction: column;
+            width: 70%;
+        }
         .normal{
             border: 1px solid black;
-            padding: 8px 8px 8px 8px;
-            margin: 4px;
-            width: 320px;
+            padding: 8px;
+            margin: 4px 0px;
+            overflow: hidden;
+            text-align: left;
         }
         .small{
             border: 1px solid rgb(0, 0, 0);
-            padding: 8px 8px 8px 8px;
-            margin: 4px;
-            width: 33%;
-            flex-direction: row;
+            width: 28%;
+            margin: 4px 0px;
+            gap: 4px;
+            padding: 8px;
+            overflow: hidden;
+            text-align: left;
         }
         .PID1, .PID2, .PID3 {
             display: flex;
             flex-direction: row;
-            width: 345px;
+            width: 100%;
             justify-content: space-between;
         }
         .botonPestañas{
@@ -68,14 +91,6 @@
             background-color: rgb(165, 165, 165);
             border: 2px solid black;
             border-radius: 10px; /* Makes the button rounded */
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            top: 25%;
-            left: 52%;
-            transform: translateX(-50%);
         }
         .tube {
             display: flex;
@@ -110,11 +125,11 @@
             margin: 10px;
         }
         #cuadro {
-            position: fixed;
+            position: absolute;
             z-index: 9999;
-            top: 98%;
-            left: 2%;
-            width: 400px;
+            top: 100%;
+            left: 8%;
+            width: 90%;
             height: 100px;
             background-color: rgb(59, 59, 59);
         }
@@ -130,8 +145,8 @@
     </header>
     <main class="controls">
         <h2>Datos Recibidos</h2>
-        <div class="datosRecividos">
-        <h3>Levitador 1</h3>
+        <div class="datosRecibidos">
+            <h3>Levitador 1</h3>
             <p class="normal">PWM del Motor 1: <span id="PWM1"></span></p>
             <p class="normal">Posicion actual del levitador 1: <span id="SP1"></span></p>
             <div class="PID1">
@@ -214,7 +229,6 @@
         <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
       </div>
     </aside>
-
   <script>
 
     setInterval(() => {
