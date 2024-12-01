@@ -126,12 +126,70 @@
         }
         #cuadro {
             position: absolute;
+            display: flex;
             z-index: 9999;
             top: 100%;
             left: 8%;
             width: 90%;
             height: 100px;
             background-color: rgb(59, 59, 59);
+        }
+        @media (max-width: 1300px) {
+            main{
+                position: absolute;
+                top: 26%;
+                width: 100%;
+                height: auto;
+            }
+            aside{
+                height: 60%;
+                width: 30%;
+                padding-right: 20px;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .datosRecibidos{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+            }
+            .levitador{
+                width: 30%;
+                margin: 0px 6px;
+            }
+            #cuadro {
+                position: absolute;
+                display: flex;
+                width: 390px;
+                left: 8px;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 1145px) {
+            #cuadro {
+                left: -10px;
+            }
+        }
+        @media (max-width: 1040px) {
+            #cuadro {
+                left: -30px;
+            }
+        }
+        @media (max-width: 864px) {
+            #cuadro {
+                position: fixed;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                left: 50%;
+                transform: translateX(-45%);
+                bottom: 0px;
+            }
         }
     </style>
 </head>
@@ -146,29 +204,35 @@
     <main class="controls">
         <h2>Datos Recibidos</h2>
         <div class="datosRecibidos">
-            <h3>Levitador 1</h3>
-            <p class="normal">PWM del Motor 1: <span id="PWM1"></span></p>
-            <p class="normal">Posicion actual del levitador 1: <span id="SP1"></span></p>
-            <div class="PID1">
-                <p class="small">Valor P: <span id="valorP1">1234</span></p>
-                <p class="small">Valor I: <span id="valorI1">34</span></p>
-                <p class="small">Valor D: <span id="valorD1"></span></p>
+            <div class="levitador">
+                <h3>Levitador 1</h3>
+                <p class="normal">PWM del Motor 1: <span id="PWM1"></span></p>
+                <p class="normal">Posicion actual del levitador 1: <span id="SP1"></span></p>
+                <div class="PID1">
+                    <p class="small">Valor P: <span id="valorP1">1234</span></p>
+                    <p class="small">Valor I: <span id="valorI1">34</span></p>
+                    <p class="small">Valor D: <span id="valorD1"></span></p>
+                </div>
             </div>
-            <h3>Levitador 2</h3>
-            <p class="normal">PWM del Motor 2: <span id="PWM2"></span></p>
-            <p class="normal">Posicion actual del levitador 2: <span id="SP2"></span></p>
-            <div class="PID2">
-                <p class="small">Valor P: <span id="valorP2">121</span></p>
-                <p class="small">Valor I: <span id="valorI2"></span></p>
-                <p class="small">Valor D: <span id="valorD2">12</span></p>
+            <div class="levitador">
+                <h3>Levitador 2</h3>
+                <p class="normal">PWM del Motor 2: <span id="PWM2"></span></p>
+                <p class="normal">Posicion actual del levitador 2: <span id="SP2"></span></p>
+                <div class="PID2">
+                    <p class="small">Valor P: <span id="valorP2">121</span></p>
+                    <p class="small">Valor I: <span id="valorI2"></span></p>
+                    <p class="small">Valor D: <span id="valorD2">12</span></p>
+                </div>
             </div>
-            <h3>Levitador 3</h3>
-            <p class="normal">PWM del Motor 3: <span id="PWM3"></span></p>
-            <p class="normal">Posicion actual del levitador 3: <span id="SP3"></span></p>
-            <div class="PID3">
-                <p class="small">Valor P: <span id="valorP3">12</span></p>
-                <p class="small">Valor I: <span id="valorI3">11</span></p>
-                <p class="small">Valor D: <span id="valorD3"></span></p>
+            <div class="levitador">
+                <h3>Levitador 3</h3>
+                <p class="normal">PWM del Motor 3: <span id="PWM3"></span></p>
+                <p class="normal">Posicion actual del levitador 3: <span id="SP3"></span></p>
+                <div class="PID3">
+                    <p class="small">Valor P: <span id="valorP3">12</span></p>
+                    <p class="small">Valor I: <span id="valorI3">11</span></p>
+                    <p class="small">Valor D: <span id="valorD3"></span></p>
+                </div>
             </div>
         </div>
     </main>
