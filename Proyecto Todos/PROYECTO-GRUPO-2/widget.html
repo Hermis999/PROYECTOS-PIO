@@ -1,361 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>DarkPan - Bootstrap 5 Admin Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container-fluid position-relative d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
-
-        <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-secondary navbar-dark">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+<main>
+    <!-- Widget Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-sm-12 col-md-6 col-xl-4">
+                <div class="h-100 bg-secondary rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <h6 class="mb-0">Mensajes</h6>
+                        <a href="">Mostrar todo</a>
                     </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Buttons</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                    <div class="d-flex align-items-center border-bottom py-3">
+                        <img class="rounded-circle flex-shrink-0" src="https://imgs.search.brave.com/MP247DGtZH7RBAV4PsFPzQDaOJGRqsRqrMaUs1MMLVw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vd3d3Lm11/c2NsZWFuZGZpdG5l/c3MuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE3LzA4L21p/bGEta3VuaXMtOC5q/cGc_cXVhbGl0eT04/NiZzdHJpcD1hbGw" alt="" style="width: 40px; height: 40px;">
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-0">Sarly</h6>
+                                <small>Hace 15 minutos</small>
+                            </div>
+                            <span>Hermis, recuerda que tenemos pendiente la reunión con el cliente interesado en la propiedad de lujo. ¿Agendamos una hora para prepararnos?</span>
                         </div>
                     </div>
-                    <a href="widget.html" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Widgets</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Sign In</a>
-                            <a href="signup.html" class="dropdown-item">Sign Up</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                            <a href="blank.html" class="dropdown-item">Blank Page</a>
+                    <div class="d-flex align-items-center border-bottom py-3">
+                        <img class="rounded-circle" src="https://imgs.search.brave.com/JWabFluYEFFOKHi57lPleeKdTFBb7CrFtDDNA5t6WXM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2IwL2Zi/L2E5L2IwZmJhOTcw/YTYyOWI1ZjIyNjFh/Njc2NDlkZmY5MTA5/LmpwZw" alt="" style="width: 40px; height: 40px;">
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-0">Michael</h6>
+                                <small>Hace 25 minutos</small>
+                            </div>
+                            <span>Hermis, no te olvides que necesitamos firmar el contrato con los compradores de la casa en el sector sur. ¿Lo dejamos listo esta tarde?</span>
                         </div>
                     </div>
-                </div>
-            </nav>
-        </div>
-        <!-- Sidebar End -->
-
-
-        <!-- Content Start -->
-        <div class="content">
-            <!-- Navbar Start -->
-            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
-                </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-                </form>
-                <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Message</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
+                    <div class="d-flex align-items-center border-bottom py-3">
+                        <img class="rounded-circle" src="https://imgs.search.brave.com/oxqCfIv88HDH8JotXbmz44KD6LTe0oaEGOhrw7txZwc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQw/OTc0NTcyOS9waG90/by9sb25kb24tZW5n/bGFuZC1jaHJpcy1l/dmFucy1hdHRlbmRz/LXRoZS1ncmF5LW1h/bi1zcGVjaWFsLXNj/cmVlbmluZy1hdC1i/Zmktc291dGhiYW5r/LW9uLWp1bHktMTku/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXY0blVKZ0NFNWtU/WnAyaEwyMEZKdVFX/MEpNaHRlRm55UXFB/c0JTOFRTcVU9" alt="" style="width: 40px; height: 40px;">
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-0">Ildemar</h6>
+                                <small>Hace 35 minutos</small>
+                            </div>
+                            <span>Hermis, debemos revisar los documentos de la propiedad comercial antes de la visita del cliente el jueves. ¿Te parece bien coordinar eso mañana?</span>
                         </div>
                     </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">John Doe</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <!-- Navbar End -->
-
-
-            <!-- Widget Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <h6 class="mb-0">Messages</h6>
-                                <a href="">Show All</a>
+                    <div class="d-flex align-items-center pt-3">
+                        <img class="rounded-circle" src="https://imgs.search.brave.com/msCQYA9MPp1zpIJIRNvh-iocrl51DMTepCCWIE9Resc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk56ZzFNVFV5/TkRZeE9GNUJNbDVC/YW5CblhrRnRaVGd3/TlRRNE1URTJNakVA/LmpwZw" alt="" style="width: 40px; height: 40px;">
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-0">Malcom</h6>
+                                <small>Hace 45 minutos</small>
                             </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calender</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div id="calender"></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">To Do List</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <input class="form-control bg-transparent" type="text" placeholder="Enter task">
-                                <button type="button" class="btn btn-primary ms-2">Add</button>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox" checked>
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span><del>Short task goes here...</del></span>
-                                        <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Testimonial</h6>
-                            <div class="owl-carousel testimonial-carousel">
-                                <div class="testimonial-item text-center">
-                                    <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
-                                    <h5 class="mb-1">Client Name</h5>
-                                    <p>Profession</p>
-                                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                                </div>
-                                <div class="testimonial-item text-center">
-                                    <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
-                                    <h5 class="mb-1">Client Name</h5>
-                                    <p>Profession</p>
-                                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <iframe class="position-relative rounded w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                            frameborder="0" allowfullscreen="" aria-hidden="false"
-                            tabindex="0" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                            <span>Hermis, necesitamos discutir la oferta del comprador para el terreno en el centro. ¿Podemos organizar una reunión con el equipo antes del viernes?</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Widget End -->
-
-
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
+            <div class="col-sm-12 col-md-6 col-xl-4">
+                <div class="h-100 bg-secondary rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Calendario</h6>
+                        <a href="">Mostrar todo</a>
+                    </div>
+                    <div id="calender"></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-xl-4">
+                <div class="h-100 bg-secondary rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Lista de tareas</h6>
+                        <a href="">Mostrar todo</a>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <input class="form-control bg-transparent" type="text" placeholder="Enter task">
+                        <button type="button" class="btn btn-primary ms-2">Agregar</button>
+                    </div>
+                    <div class="d-flex align-items-center border-bottom py-2">
+                        <input class="form-check-input m-0" type="checkbox">
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span>Actualizar inventario de propiedades disponibles...</span>
+                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                            </div>
                         </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                    </div>
+                    <div class="d-flex align-items-center border-bottom py-2">
+                        <input class="form-check-input m-0" type="checkbox">
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span>Coordinar visitas a propiedades...</span>
+                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center border-bottom py-2">
+                        <input class="form-check-input m-0" type="checkbox" checked>
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span><del>Gestionar contratos...</del></span>
+                                <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center border-bottom py-2">
+                        <input class="form-check-input m-0" type="checkbox">
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span>Promocionar propiedades...</span>
+                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center pt-2">
+                        <input class="form-check-input m-0" type="checkbox">
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span>Atender consultas de clientes...</span>
+                                <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Footer End -->
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <h6 class="mb-4">Testimonios</h6>
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
+                            <h5 class="mb-1">Camila Rodriguez</h5>
+                            <p>Diseñadora de interiores</p>
+                            <p class="mb-0">Gracias a Bienes Raíces PIO, encontré el apartamento perfecto en tiempo record. Fueron muy atentos y profesionales en casa etapa del proceso. Definitivamente los recomendaré.</p>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
+                            <h5 class="mb-1">Luis Fernández</h5>
+                            <p>Empresario</p>
+                            <p class="mb-0">No tenía idea de cómo vender m propiedad, pero ellos me guiaron paso a paso. Lograron un excelente trato en menos tiempo del esperado. ¡Un servicio excepcional!</p>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
+                            <h5 class="mb-1">Diana Pérez</h5>
+                            <p>Maestra</p>
+                            <p class="mb-0">Estaba buscando una casa para mi familia y no sabía por dónde empezar. Con su ayuda, no solo encontré la casa ideal, sino que hicieron que todo fueera fácil y seguro.</p>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
+                            <h5 class="mb-1">José Martínez</h5>
+                            <p>Ingeniero civil</p>
+                            <p class="mb-0">Su conocimiento del mercado y su dedicación me dieron mucha confianza. Vendí mi terreno a un excelente precio. Sin duda, los volveré a contratar para futuros proyectos.</p>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
+                            <h5 class="mb-1">Ana Gómez</h5>
+                            <p>Abogada</p>
+                            <p class="mb-0">Había probado otros servicios antes, pero ninguno como este. Aquí me trataron como prioridad y entendieron mis necesidades desde el inicio. ¡Mil gracias por todo!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <iframe class="position-relative rounded w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                    frameborder="0" allowfullscreen="" aria-hidden="false"
+                    tabindex="0" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                </div>
+            </div>
         </div>
-        <!-- Content End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
+    <!-- Widget End -->
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
@@ -366,6 +178,4 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
-
-</html>
+</main>
