@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Básico</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Usuarios</h1>
+        <hr>
+        <div class="nav">
+            <a href="/create">+ Crear Usuario</a>
+
+            <!-- Lita de Usuarios-->
+            <ul> 
+                <% users.forEach(user => {  %>  
+                    <li>
+                        <%= user.name %> -  - <%= user.email %> -   - <%= user.age %> años    ->
+                        <a href="/edit/<%= user._id %>">Edit</a>
+                        <a href="/delete/<%= user._id %>">Eliminar</a>
+                    </li>
+                <%   }) %>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

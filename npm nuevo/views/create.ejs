@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= user ? 'Editar ': 'Crear ' %> Usuario</title>
+</head>
+<body>
+    <h1> Formulario <%= user ? 'Editar ': 'Crear ' %> Usuario </h1>
+<form action="<%= user ? '/update/' + user._id : '/store' %>" method="POST">
+        <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" value="<%= user ? user.name : '' %>" required>
+        <br>
+        <label for="email">Correo:</label>
+            <input type="email" id="email" name="email" value="<%= user ? user.email : '' %>" required >
+        <br>
+        <label for="age">Edad:</label>
+            <input type="number" id="age" name="age" value="<%= user ? user.age : '' %>" required >
+        <br>
+
+        <button type="submit" ><%= user ? 'Actualizar': 'Crear' %></button>
+    </form>
+
+</body>
+</html>
