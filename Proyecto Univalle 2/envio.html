@@ -6,7 +6,7 @@
   <title>INTERFACE</title>
   <style>                     
     body{
-      background-color:rgb(192, 192, 192);
+      background-color:rgb(65, 132, 255);
       font-family: Arial;
       margin: 0px;
       text-align: center;
@@ -19,7 +19,7 @@
     main{
       display: flex;
       position: absolute;
-      background-color: rgb(171, 171, 171);
+      background-color: rgb(145, 200, 255);
       margin: 0px;
       top: 0%;
       left: 0%;
@@ -62,7 +62,7 @@
       flex-direction: column;
       padding: 5px;
     }
-    .boton, .botonM, .botonF{
+    .boton, .botonC, .botonM, .botonF{
       margin: 6px;
       padding: 10px;
       color: black;
@@ -70,7 +70,7 @@
       border: 2px solid black;
       border-radius: 5px; /* Makes the button rounded */
     }
-    .boton:hover, .botonM:hover, .botonF:hover{
+    .boton:hover, .botonC:hover, .botonM:hover, .botonF:hover{
       background-color: rgb(142, 142, 142);
       cursor: pointer;
     }
@@ -91,7 +91,6 @@
         position: relative;
         width: auto;
         height: 100%;
-        background-color: rgb(20, 98, 255);
       }
       form{
         display: flex;
@@ -108,17 +107,32 @@
       .levitadores{
         display: flex;
         width: 100%;
-        margin: 10px 5px;
+        margin: 20px 5px;
+      }
+      .united{
+        margin: 10px;
+        height: 100%;
+      }
+      input{
+        margin: 20px 0px;
+      }
+      button{
+        margin-bottom: 20px;
       }
     }
     @media (max-width: 1100px) {
       main{
         min-width: 100%;
         height: auto;
-        background-color: rgb(81, 162, 242);
       }
       .levitadores{
         flex-direction: column;
+        margin: 20px 0px;
+      }
+      .PID1P, .PID1I, .PID1D,
+      .PID2P, .PID2I, .PID2D,
+      .PID3P, .PID3I, .PID3D {
+        margin: 0% 1%;
       }
     }
     @media (max-width: 450px) {
@@ -128,7 +142,6 @@
       main{
         min-width: 100%;
         height: auto;
-        background-color: rgb(52, 218, 255);
       }
       .botonesPestañas{
         display: flex;
@@ -151,7 +164,7 @@
       .botones{
         flex-direction: column;
       }
-      .boton, .botonM, .botonF{
+      .boton, .botonC, .botonM, .botonF{
         margin: 6px;
         padding: 10px;
         font-size: 18px;
@@ -159,6 +172,16 @@
       }
       .levitadores{
         flex-direction: column;
+        margin: 20px 0px;
+      }
+      .united{
+        margin: 0px;
+      }
+      input{
+        margin: 0px 0px;
+      }
+      button{
+        margin-bottom: 10px;
       }
     }
     .levitador1 , .levitador2 , .levitador3 {
@@ -166,13 +189,27 @@
       flex-direction: column;
       justify-content: flex-start;
       text-align: center;
+      padding: 10px 0px;
       margin: 0px auto;
+      border: 1px solid black;
+    }
+    .levitador1, .levitador3{
+      background-color: #a4a4a4;
+    }
+    .levitador2{
+      background-color: #b6b6b6;
     }
     .envio{
       padding: 10px;
       width: 40%;
+      color: white;
+      background-color: purple;
       justify-content: center;
       align-items: center;
+    }
+    .envio:hover{
+      cursor: pointer;
+      background-color: rgb(90, 12, 90);
     }
     .small{
       display: flex;
@@ -201,6 +238,7 @@
       transform: rotate(270deg);
       height: 180px;
       right: 25px;
+      accent-color: purple;
     }
   </style> 
 </head>
@@ -228,6 +266,32 @@
           });
         }
       </script>
+      <button class="botonC" onclick="toggleCONTROL()">ON/OFF Control Total</button>
+      <script>
+        function toggleCONTROL() {
+          fetch('/togglecontrol').then(response => response.text()).then(data => {
+            const buttonC = document.querySelector('.botonC');
+            if (data === '1') {
+              buttonC.style.backgroundColor = 'green';
+            } else {
+              buttonC.style.backgroundColor = 'red';
+            }
+          });
+        }
+      </script>
+      <button class="botonF" onclick="toggleFUNCION()">ON/OFF Envio</button>
+      <script>
+        function toggleFUNCION() {
+          fetch('/togglefuncion').then(response => response.text()).then(data => {
+            const buttonF = document.querySelector('.botonF');
+            if (data === '1') {
+              buttonF.style.backgroundColor = 'green';
+            } else {
+              buttonF.style.backgroundColor = 'red';
+            }
+          });
+        }
+      </script>
       <button class="botonM" onclick="toggleMOTORS()">ON/OFF Servos</button>
       <script>
         function toggleMOTORS() {
@@ -237,19 +301,6 @@
               buttonM.style.backgroundColor = 'green';
             } else {
               buttonM.style.backgroundColor = 'red';
-            }
-          });
-        }
-      </script>
-      <button class="botonF" onclick="toggleFUNCION()">ON/OFF Servos</button>
-      <script>
-        function toggleFUNCION() {
-          fetch('/togglefuncion').then(response => response.text()).then(data => {
-            const buttonF = document.querySelector('.botonF');
-            if (data === '1') {
-              buttonF.style.backgroundColor = 'green';
-            } else {
-              buttonF.style.backgroundColor = 'red';
             }
           });
         }
@@ -283,7 +334,6 @@
             <label for="setPoint1">Set Point 1:</label>
             <span id="setPoint1Display">0</span>
             <input type="range" class="barra" id="setPoint1" name="setPoint1" min="0" max="50" value="0" style="width: 100%;" oninput="document.getElementById('setPoint1Display').textContent = this.value" />
-            
             <br>
           </div>
           <div class="united">
@@ -325,17 +375,20 @@
         <div class="small">
           <div class="united">
             <label for="setPoint2">Set Point 2:</label>
-            <input type="number" id="setPoint2" name="setPoint2" min="0" max="50" required>
+            <span id="setPoint2Display">0</span>
+            <input type="range" class="barra" id="setPoint2" name="setPoint2" min="0" max="50" value="0" style="width: 100%;" oninput="document.getElementById('setPoint2Display').textContent = this.value" />
             <br>
           </div>
           <div class="united">
             <label for="pwm2">PWM 2:</label>
-            <input type="number" id="pwm2" name="pwm2" min="0" max="255" required>
+            <span id="pwm2Display">0</span>
+            <input type="range" class="barra" id="pwm2" name="pwm2" min="0" max="255" value="0" style="width: 100%;" oninput="document.getElementById('pwm2Display').textContent = this.value" />
             <br>
           </div>
           <div class="united">
             <label for="numero2">Grados 2°:</label>
-            <input type="number" id="numero2" name="numero2" min="0" max="50" required>
+            <span id="numero2Display">0</span>
+            <input type="range" class="barra" id="numero2" name="numero2" min="0" max="180" value="0" style="width: 100%;" oninput="document.getElementById('numero2Display').textContent = this.value" />
             <br>
           </div>
         </div>
@@ -365,17 +418,20 @@
         <div class="small">
           <div class="united">
             <label for="setPoint3">Set Point 3:</label>
-            <input type="number" id="setPoint3" name="setPoint3" min="0" max="50" required>
+            <span id="setPoint3Display">0</span>
+            <input type="range" class="barra" id="setPoint3" name="setPoint3" min="0" max="50" value="0" style="width: 100%;" oninput="document.getElementById('setPoint3Display').textContent = this.value" />
             <br>
           </div>
           <div class="united">
             <label for="pwm3">PWM 3:</label>
-            <input type="number" id="pwm3" name="pwm3" min="0" max="255" required>
+            <span id="pwm3Display">0</span>
+            <input type="range" class="barra" id="pwm3" name="pwm3" min="0" max="255" value="0" style="width: 100%;" oninput="document.getElementById('pwm3Display').textContent = this.value" />
             <br>
           </div>
           <div class="united">
             <label for="numero3">Grados 3°:</label>
-            <input type="number" id="numero3" name="numero3" min="0" max="50" required>
+            <span id="numero3Display">0</span>
+            <input type="range" class="barra" id="numero3" name="numero3" min="0" max="180" value="0" style="width: 100%;" oninput="document.getElementById('numero3Display').textContent = this.value" />
             <br>
           </div>
         </div>

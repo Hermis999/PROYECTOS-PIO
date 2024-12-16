@@ -6,7 +6,7 @@
     <title>Control PID</title>
     <style>                      
         body{
-            background-color:rgb(192, 192, 192);
+            background-color:rgb(65, 132, 255);
             font-family: Arial;
             margin: 0px;
             text-align: center;
@@ -19,7 +19,7 @@
         main{
             display: inline-flex;
             position: absolute;
-            background-color: rgb(171, 171, 171);
+            background-color: rgb(145, 200, 255);
             margin: 0px;
             top: 0%;
             left: 0%;
@@ -42,6 +42,10 @@
             margin:5px 10px;
         }
         aside{
+            height: 10px;
+            width: 80%;
+        }
+        .container{
             height: 60%;
             width: 30%;
             padding-right: 20px;
@@ -92,6 +96,9 @@
             border: 2px solid black;
             border-radius: 10px; /* Makes the button rounded */
         }
+        .botonPestañas:hover{
+            background-color: rgb(142, 142, 142);
+        }
         .tube {
             display: flex;
             background-color: rgba(255, 255, 255, 0.252);
@@ -137,14 +144,16 @@
         @media (max-width: 1300px) {
             main{
                 position: absolute;
+                padding: 20px 0px;
                 top: 26%;
                 width: 100%;
                 height: auto;
             }
-            aside{
+            .container{
                 height: 60%;
                 width: 30%;
                 padding-right: 20px;
+                margin: 30px 0px;
                 display: flex;
                 justify-content: center;
                 position: absolute;
@@ -160,7 +169,7 @@
             }
             .levitador{
                 width: 30%;
-                margin: 0px 6px;
+                margin: 0px 15px;
             }
             #cuadro {
                 position: absolute;
@@ -176,7 +185,18 @@
             }
         }
         @media (max-width: 1040px) {
+            .datosRecibidos{
+                flex-direction: column;
+                align-items: center;
+            }
+            .container{
+                top: 820px;
+            }
+            .levitador{
+                width: 70%;
+            }
             #cuadro {
+                position: absolute;
                 left: -30px;
             }
         }
@@ -189,6 +209,102 @@
                 left: 50%;
                 transform: translateX(-45%);
                 bottom: 0px;
+            }
+            .levitador{
+                width: 80%;
+            }
+        }
+        @media (max-width: 500px) {
+            h1{
+                font-size: 40px;
+            }
+            header{
+                margin: 0px;
+            }
+            main{
+                top: 25%;
+            }
+            #cuadro {
+                width: 250%;
+                margin: 5px;
+            }
+            .levitador{
+                width: 80%;
+            }
+            .container{
+                top: 810px;
+            }
+            .marcador{
+                margin: 21px 5px 0px 30px;
+                height: 50px;
+            }
+            .botonesPestañas{
+                display: flex;
+                flex-direction: row;
+                top: 0px;
+                width: 100%;
+                height: 80px;
+                justify-content: space-between;
+            }
+            .botonPestañas{
+                display: flex;
+                margin: 0px;
+                padding: 10px;
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                width: 45%;
+                border-radius: 0px; /* Makes the button rounded */
+            }
+        }
+        @media (max-width: 436px) {
+            main{
+                top: 23%;
+            }
+            #cuadro {
+                left: 54px;
+                top: 460px;
+            }
+            .PID1, .PID2, .PID3 {
+                flex-direction: column;
+                width: 100%;
+                justify-content: space-between;
+            }
+            .small{
+                width: 94%;
+            }
+            .container{
+                top: 1050px;
+            }
+        }
+        @media (max-width: 395px) {
+            #cuadro {
+                top: 440px;
+            }
+        }
+        @media (max-width: 354px) {
+            main{
+                top: 28%;
+            }
+            .small{
+                width: 92%;
+            }
+            .container{
+                top: 1090px;
+            }
+            #cuadro {
+                top: 440px;
+            }
+        }
+        @media (max-width: 324px) {
+            main{
+                top: 45%;
+            }
+            .container{
+                top: 1190px;
+            }
+            #cuadro {
+                top: 380px;
             }
         }
     </style>
@@ -236,64 +352,66 @@
             </div>
         </div>
     </main>
-    <aside class="container">
-      <div class="tubos">
-          <div class="marcador-tube">
-              <div class="marcador">50</div>
-              <div class="marcador">45</div>
-              <div class="marcador">40</div>
-              <div class="marcador">35</div>
-              <div class="marcador">30</div>
-              <div class="marcador">25</div>
-              <div class="marcador">20</div>
-              <div class="marcador">15</div>
-              <div class="marcador">10</div>
-              <div class="marcador">5</div>
-              <div class="marcador">0</div>
-          </div>
-          <div class="container-tube">
-              <div class="tube" id="tube1"></div>
-          </div>
-          <div class="marcador-tube">
-              <div class="marcador">50</div>
-              <div class="marcador">45</div>
-              <div class="marcador">40</div>
-              <div class="marcador">35</div>
-              <div class="marcador">30</div>
-              <div class="marcador">25</div>
-              <div class="marcador">20</div>
-              <div class="marcador">15</div>
-              <div class="marcador">10</div>
-              <div class="marcador">5</div>
-              <div class="marcador">0</div>
-          </div>
-          <div class="container-tube">
-              <div class="tube" id="tube2"></div>
-          </div>
-          <div class="marcador-tube">
-              <div class="marcador">50</div>
-              <div class="marcador">45</div>
-              <div class="marcador">40</div>
-              <div class="marcador">35</div>
-              <div class="marcador">30</div>
-              <div class="marcador">25</div>
-              <div class="marcador">20</div>
-              <div class="marcador">15</div>
-              <div class="marcador">10</div>
-              <div class="marcador">5</div>
-              <div class="marcador">0</div>
-          </div>
-          <div class="container-tube">
-              <div class="tube" id="tube3"></div>
-          </div>
-      </div>
-      <div id="cuadro" style="display: flex; justify-content: space-between; align-items: center;">
-        <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
-        <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
-        <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
-      </div>
+    <aside>
+        <div class="container">
+            <div class="tubos">
+            <div class="marcador-tube">
+                <div class="marcador">50</div>
+                <div class="marcador">45</div>
+                <div class="marcador">40</div>
+                <div class="marcador">35</div>
+                <div class="marcador">30</div>
+                <div class="marcador">25</div>
+                <div class="marcador">20</div>
+                <div class="marcador">15</div>
+                <div class="marcador">10</div>
+                <div class="marcador">5</div>
+                <div class="marcador">0</div>
+            </div>
+            <div class="container-tube">
+                <div class="tube" id="tube1"></div>
+            </div>
+            <div class="marcador-tube">
+                <div class="marcador">50</div>
+                <div class="marcador">45</div>
+                <div class="marcador">40</div>
+                <div class="marcador">35</div>
+                <div class="marcador">30</div>
+                <div class="marcador">25</div>
+                <div class="marcador">20</div>
+                <div class="marcador">15</div>
+                <div class="marcador">10</div>
+                <div class="marcador">5</div>
+                <div class="marcador">0</div>
+            </div>
+            <div class="container-tube">
+                <div class="tube" id="tube2"></div>
+            </div>
+            <div class="marcador-tube">
+                <div class="marcador">50</div>
+                <div class="marcador">45</div>
+                <div class="marcador">40</div>
+                <div class="marcador">35</div>
+                <div class="marcador">30</div>
+                <div class="marcador">25</div>
+                <div class="marcador">20</div>
+                <div class="marcador">15</div>
+                <div class="marcador">10</div>
+                <div class="marcador">5</div>
+                <div class="marcador">0</div>
+            </div>
+            <div class="container-tube">
+                <div class="tube" id="tube3"></div>
+            </div>
+            </div>
+            <div id="cuadro" style="display: flex; justify-content: space-between; align-items: center;">
+            <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
+            <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
+            <img src="https://cdn-icons-png.freepik.com/256/16090/16090555.png?semt=ais_hybrid" alt="">
+            </div>
+        </div>
     </aside>
-  <script>
+    <script>
 
     setInterval(() => {
         fetch('/PWM1')
@@ -390,56 +508,56 @@
 //    }, 20000); // Actualizar cada 20 segundos 
 
     function adjustSize(tubeId, size) {
-      const maxSize = 50;
-      const initialSize = 0;
-      const newPosition = Math.max(initialSize, Math.min((size * 8)+5, (maxSize * 8))+5);
-      const tube = document.getElementById(tubeId);
-      let ficha = tube.querySelector('.ficha');
+        const maxSize = 50;
+        const initialSize = 0;
+        const newPosition = Math.max(initialSize, Math.min((size * 8)+5, (maxSize * 8))+5);
+        const tube = document.getElementById(tubeId);
+        let ficha = tube.querySelector('.ficha');
 
-      if (!ficha) {
-          // Crear el contenedor para la flecha
-          ficha = document.createElement('div');
-          ficha.className = 'ficha';
-          ficha.style.position = 'absolute';
-          ficha.style.left = '50%';
-          ficha.style.transform = 'translateX(-50%)';
-          ficha.style.bottom = '0px';
-          
-          // Crear la punta de flecha (triángulo)
-          const punta = document.createElement('div');
-          punta.style.width = '0';
-          punta.style.height = '0';
-          punta.style.borderLeft = '15px solid transparent';
-          punta.style.borderRight = '15px solid transparent';
-          punta.style.borderBottom = '20px solid red';
+        if (!ficha) {
+            // Crear el contenedor para la flecha
+            ficha = document.createElement('div');
+            ficha.className = 'ficha';
+            ficha.style.position = 'absolute';
+            ficha.style.left = '50%';
+            ficha.style.transform = 'translateX(-50%)';
+            ficha.style.bottom = '0px';
+            
+            // Crear la punta de flecha (triángulo)
+            const punta = document.createElement('div');
+            punta.style.width = '0';
+            punta.style.height = '0';
+            punta.style.borderLeft = '15px solid transparent';
+            punta.style.borderRight = '15px solid transparent';
+            punta.style.borderBottom = '20px solid purple';
 
-          // Crear el cuerpo de la flecha (rectángulo)
-          const cuerpo = document.createElement('div');
-          cuerpo.style.width = '15px'; // hacer el rectángulo más delgado
-          cuerpo.style.height = '15px';
-          cuerpo.style.backgroundColor = 'red';
-          cuerpo.style.position = 'absolute';
-          cuerpo.style.left = '50%';
-          cuerpo.style.transform = 'translateX(-50%)';
+            // Crear el cuerpo de la flecha (rectángulo)
+            const cuerpo = document.createElement('div');
+            cuerpo.style.width = '15px'; // hacer el rectángulo más delgado
+            cuerpo.style.height = '15px';
+            cuerpo.style.backgroundColor = 'purple';
+            cuerpo.style.position = 'absolute';
+            cuerpo.style.left = '50%';
+            cuerpo.style.transform = 'translateX(-50%)';
 
-          // Crear el cuerpo de la flecha (rectángulo2)
-          const cuerpo2 = document.createElement('div');
-          cuerpo2.style.width = '25px'; // hacer el rectángulo más delgado
-          cuerpo2.style.height = '8px';
-          cuerpo2.style.backgroundColor = 'red';
-          cuerpo2.style.position = 'absolute';
-          cuerpo2.style.left = '50%';
-          cuerpo2.style.transform = 'translateX(-50%)';
-          cuerpo2.style.top = '30px';
-          // Añadir la punta y el cuerpo a la ficha
-          ficha.appendChild(punta);
-          ficha.appendChild(cuerpo);
-          ficha.appendChild(cuerpo2);
-          tube.appendChild(ficha);
-      }
+            // Crear el cuerpo de la flecha (rectángulo2)
+            const cuerpo2 = document.createElement('div');
+            cuerpo2.style.width = '25px'; // hacer el rectángulo más delgado
+            cuerpo2.style.height = '8px';
+            cuerpo2.style.backgroundColor = 'purple';
+            cuerpo2.style.position = 'absolute';
+            cuerpo2.style.left = '50%';
+            cuerpo2.style.transform = 'translateX(-50%)';
+            cuerpo2.style.top = '30px';
+            // Añadir la punta y el cuerpo a la ficha
+            ficha.appendChild(punta);
+            ficha.appendChild(cuerpo);
+            ficha.appendChild(cuerpo2);
+            tube.appendChild(ficha);
+        }
 
-      ficha.style.bottom = newPosition + 'px';
+        ficha.style.bottom = newPosition + 'px';
     }
-  </script>
+    </script>
 </body>
 </html>
