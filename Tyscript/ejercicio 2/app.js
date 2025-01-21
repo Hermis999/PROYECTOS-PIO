@@ -86,5 +86,5 @@ mostrarProductos();
 console.log("///-------------------------------------------------------///");
 console.log("///--------------------PRODUCTO BUSCADO-------------------///");
 // Llamada a la función
-buscarProducto("TV"); // Cambiar el nombre para buscar otros productos
+buscarProducto("Camiseta"); // Cambiar el nombre para buscar otros productos
 console.log("///-------------------------------------------------------///");
