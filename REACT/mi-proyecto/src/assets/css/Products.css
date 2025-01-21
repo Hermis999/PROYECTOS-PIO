@@ -1,0 +1,12 @@
+.containerall {
+    background-color: #dadada; /* Cambia el color de fondo */
+    padding: 20px;           /* Agrega un relleno interno */
+    border-radius: 8px;      /* Bordes redondeados opcionales */
+}
+
+.card-number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+}
