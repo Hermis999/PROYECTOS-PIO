@@ -5,6 +5,7 @@ exports.index = async (req, res) => {
     try{
         const users = await User.find();
         res.render('index', {users});
+        //res.json(users)
 
     }catch(error){
         res.status(500).send(error);
@@ -64,12 +65,3 @@ exports.delete = async (req, res) =>{
     }
 };
 
-exports.search = async (req, res) => {
-    try{
-        const name = req.query.search;
-        const users = await User.find({name});
-        res.render('index', {users});
-    }catch(error){
-        res.status(500).send(error);
-    }
-};
